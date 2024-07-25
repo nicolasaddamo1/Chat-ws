@@ -36,7 +36,7 @@ io.on('connection', async (socket)=>{
     })
     socket.on('chat message', async (msg)=> { 
         let result
-        const username = socket.handshake.auth.username ?? 'anonymus'
+        let username = socket.handshake.auth.username ?? 'anonymus'
         try{
             result = await db.execute({
                 sql: `INSERT INTO messages (content, user) VALUES (:msg, :username)`,
