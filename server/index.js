@@ -34,7 +34,7 @@ io.on('connection', async (socket)=>{
     socket.on('Disconnect',()=> {
       console.log("An user has disconnected.")
     })
-    socket.on('Chat message: ', async (msg)=> { 
+    socket.on('chat message', async (msg)=> { 
         let result
         let username = socket.handshake.auth.username ?? 'Anonymus'
         try{
@@ -75,5 +75,5 @@ app.use('/', (req, res)=>{
 // }) esto es para escuchar el server de express y ahora lo haremos con el server de ScoketIO abajo:
 
 server.listen(port, ()=>{
-    console.log(`server running on port: ${port}`)
+    console.log(`Server running on Port: ${port}`)
 })
