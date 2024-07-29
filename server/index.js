@@ -29,10 +29,10 @@ const io = new Server(server, {
 })
 
 io.on('connection', async (socket)=>{
-    console.log('an user has connected')
+    console.log('An user has connected.')
 
-    socket.on('disconnect',()=> {
-      console.log("an user has disconnected")
+    socket.on('Disconnect',()=> {
+      console.log("An user has disconnected.")
     })
     socket.on('chat message', async (msg)=> { 
         let result
@@ -75,5 +75,5 @@ app.use('/', (req, res)=>{
 // }) esto es para escuchar el server de express y ahora lo haremos con el server de ScoketIO abajo:
 
 server.listen(port, ()=>{
-    console.log(`server running on port ${port}`)
+    console.log(`server running on port: ${port}`)
 })
