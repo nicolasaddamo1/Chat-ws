@@ -34,9 +34,9 @@ io.on('connection', async (socket)=>{
     socket.on('Disconnect',()=> {
       console.log("An user has disconnected.")
     })
-    socket.on('chat message', async (msg)=> { 
+    socket.on('Chat message: ', async (msg)=> { 
         let result
-        let username = socket.handshake.auth.username ?? 'anonymus'
+        let username = socket.handshake.auth.username ?? 'Anonymus'
         try{
             result = await db.execute({
                 sql: `INSERT INTO messages (content, user) VALUES (:msg, :username)`,
