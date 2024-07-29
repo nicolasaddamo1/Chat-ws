@@ -10,7 +10,7 @@
         const getUsername = async () => {
             const username = localStorage.getItem('username')
             if (username){
-                console.log(`User existed ${username}`)
+                console.log(`User exists ${username}`)
                 return username
             }
             const res = await fetch('https://random-data-api.com/api/users/random_user')
